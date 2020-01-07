@@ -12,12 +12,15 @@ typedef struct {} Metadata;
 typedef struct {} ProtocolDescriptor;
 typedef struct {} OpaqueValue;
 
-ProtocolDescriptor PROTOCOL_DESCR_SYM(SQ);
+extern ProtocolDescriptor PROTOCOL_DESCR_SYM(SQ);
 ProtocolDescriptor *EquatableProtocolDescriptor = &PROTOCOL_DESCR_SYM(SQ);
 
 extern WitnessTable *swift_conformsToProtocol(Metadata *type, ProtocolDescriptor *protocol);
 
-extern bool AnyEquatable_internalIsEqual(OpaqueValue *lhs, OpaqueValue *rhs, Metadata *type, WitnessTable *witness);
+extern bool AnyEquatable_internalIsEqual(OpaqueValue *lhs,
+                                         OpaqueValue *rhs,
+                                         Metadata *type,
+                                         WitnessTable *witness);
 
 bool dispatchIsEqual(OpaqueValue *lhs,
                      OpaqueValue *rhs,
