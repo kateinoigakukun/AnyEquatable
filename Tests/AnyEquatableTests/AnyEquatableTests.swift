@@ -7,5 +7,6 @@ final class AnyEquatableTests: XCTestCase {
         XCTAssertTrue(AnyEquatable.isEqual("abc", "abc"))
         XCTAssertFalse(AnyEquatable.isEqual(1, 3))
         XCTAssertFalse(AnyEquatable.isEqual(NotEquatable(), NotEquatable()))
+        XCTAssertFalse(AnyEquatable.isEqual(1, "abc"))
     }
 }
