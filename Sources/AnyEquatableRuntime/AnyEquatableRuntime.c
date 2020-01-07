@@ -26,5 +26,6 @@ bool dispatchIsEqual(OpaqueValue *lhs,
                      OpaqueValue *rhs,
                      Metadata *type) {
     WitnessTable *witnessTable = swift_conformsToProtocol(type, EquatableProtocolDescriptor);
+    if(!witnessTable) return false;
     return AnyEquatable_internalIsEqual(lhs, rhs, type, witnessTable);
 }
